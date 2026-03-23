@@ -1,0 +1,110 @@
+---
+const venueLinks = [
+  { label: 'LongHouse',                href: '/longhouse' },
+  { label: 'BuenaVida Cantina',        href: '/buenavida-cantina' },
+  { label: 'Lot F',                    href: '/lot-f' },
+  { label: 'Fireside / Local Kitchen', href: '/venue-local-fireside' },
+];
+
+const companyLinks = [
+  { label: 'Venues',          href: '/venues' },
+  { label: 'Catering',        href: '/catering' },
+  { label: 'Host Your Event', href: '/host-your-event' },
+  { label: 'Careers',         href: '/careers' },
+];
+
+const year = new Date().getFullYear();
+---
+
+<footer style="background: #000; color: #fff; margin-top: 6rem;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 4rem 1.5rem;">
+
+    <!-- Four column grid -->
+    <div id="footer-grid" style="display: grid; grid-template-columns: 1fr; gap: 3rem; margin-bottom: 4rem;">
+
+      <!-- Brand -->
+      <div>
+        <a href="/" aria-label="Block Party Productions home">
+          <img
+            src="/logo.svg"
+            alt="Block Party Productions"
+            style="height: 2rem; width: auto; margin-bottom: 1rem; filter: brightness(0) invert(1);"
+          />
+        </a>
+        <p style="font-size: 0.875rem; color: #9ca3af; line-height: 1.7; margin: 0 0 1rem;">
+          Distinctive venues. Inspired cuisine.<br />
+          Effortless events in San Francisco's SoMa.
+        </p>
+        
+          href="mailto:events@blockpartysf.com"
+          style="font-size: 0.875rem; color: #d1d5db; text-decoration: none;"
+        >
+          events@blockpartysf.com
+        </a>
+      </div>
+
+      <!-- Our Venues -->
+      <div>
+        <h3 style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; margin: 0 0 1rem;">
+          Our Venues
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+          {venueLinks.map(link => (
+            <li>
+              <a href={link.href} style="font-size: 0.875rem; color: #d1d5db; text-decoration: none;">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; margin: 0 0 1rem;">
+          Company
+        </h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+          {companyLinks.map(link => (
+            <li>
+              <a href={link.href} style="font-size: 0.875rem; color: #d1d5db; text-decoration: none;">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div>
+        <h3 style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #6b7280; margin: 0 0 1rem;">
+          Ready to gather?
+        </h3>
+        <p style="font-size: 0.875rem; color: #9ca3af; margin: 0 0 1rem; line-height: 1.6;">
+          Let our team help you plan something unforgettable.
+        </p>
+        <a href="/host-your-event" class="button on-inverse">
+          Plan Your Event
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div style="border-top: 1px solid #1f2937; padding-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center;">
+      <p style="font-size: 0.75rem; color: #6b7280; margin: 0;">
+        &copy; {year} Block Party Productions. All rights reserved.
+      </p>
+      <p style="font-size: 0.75rem; color: #374151; margin: 0;">San Francisco, CA</p>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  @media (min-width: 768px) {
+    #footer-grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+    }
+  }
+</style>

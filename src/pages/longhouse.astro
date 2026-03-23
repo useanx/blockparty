@@ -1,0 +1,7 @@
+---
+import VenuePage from '../components/VenuePage.astro';
+import { venues } from '../data/venues';
+
+const venue = venues.find(v => v.slug === 'longhouse')!;
+---
+<VenuePage venue={venue} />

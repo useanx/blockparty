@@ -1,0 +1,232 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Catering - Block Party Productions"
+  description="Deliciously easy catering that leaves a lasting impression. Chef-crafted menus, seasonal ingredients, and flexible service for any event in San Francisco."
+>
+
+  <!-- HERO -->
+  <section style="position: relative; min-height: 55vh; display: flex; align-items: center; overflow: hidden; background: #111;">
+    <img
+      src="/images/hero-catering.jpg"
+      alt="Block Party Productions catering"
+      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;"
+    />
+    <div style="position: relative; z-index: 1; padding: 3rem 1.5rem; max-width: 700px; margin: 0 auto; text-align: center;">
+      <h1 class="heading_h1" style="color: #fff; margin: 0 0 1rem;">Catering</h1>
+      <p class="subheading" style="color: rgba(255,255,255,0.85); margin: 0 0 2rem;">
+        Deliciously Easy Catering<br />That Leaves a Lasting Impression.
+      </p>
+      <a href="#catering-form" class="button on-inverse is-secondary">Explore menus</a>
+    </div>
+  </section>
+
+  <!-- INTRO IMAGES + TEXT -->
+  <section style="max-width: 1280px; margin: 0 auto; padding: 6rem 1.5rem;">
+    <div id="catering-intro" style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 5rem;">
+      <img
+        src="/images/catering-event.jpg"
+        alt="Special catering event"
+        style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 1rem; background: #f3f4f6;"
+      />
+      <img
+        src="/images/catering-dish.jpg"
+        alt="Unique dish preparation"
+        style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 1rem; background: #f3f4f6;"
+      />
+    </div>
+  </section>
+
+  <!-- CATERING FORM -->
+  <section id="catering-form" style="background: #f9fafb; padding: 6rem 1.5rem;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 class="heading_h2" style="margin: 0 0 0.75rem;">Let's plan your next catering</h2>
+      <p class="subheading" style="margin: 0 0 2.5rem;">
+        Tell us about your event and we'll craft a menu your guests will love.
+      </p>
+
+      <form id="catering-inquiry-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+        <!-- Name row -->
+        <div id="catering-name-row" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div>
+            <label for="c-first-name" class="input_label">First name *</label>
+            <input type="text" id="c-first-name" name="firstName" placeholder="First name" required />
+          </div>
+          <div>
+            <label for="c-last-name" class="input_label">Last name *</label>
+            <input type="text" id="c-last-name" name="lastName" placeholder="Last name" required />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="c-email" class="input_label">Email</label>
+          <input type="email" id="c-email" name="email" placeholder="email@website.com" />
+        </div>
+
+        <!-- Company -->
+        <div>
+          <label for="c-company" class="input_label">Company Name *</label>
+          <input type="text" id="c-company" name="company" placeholder="Required" required />
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label for="c-phone" class="input_label">Phone Number *</label>
+          <input type="tel" id="c-phone" name="phone" placeholder="+1 (415) 000-0000" required />
+        </div>
+
+        <!-- Guest count -->
+        <div>
+          <label for="c-guest-count" class="input_label">Guest count</label>
+          <select id="c-guest-count" name="guestCount">
+            <option value="">Select one...</option>
+            <option value="1 - 10">1 – 10</option>
+            <option value="10 - 30">10 – 30</option>
+            <option value="30+">30+</option>
+          </select>
+        </div>
+
+        <!-- Budget -->
+        <div>
+          <label for="c-budget" class="input_label">Your budget</label>
+          <select id="c-budget" name="budget">
+            <option value="">Select one...</option>
+            <option value="$1-2K">$1–2K</option>
+            <option value="$3-5K">$3–5K</option>
+            <option value="$5K+">$5K+</option>
+          </select>
+        </div>
+
+        <!-- Cuisine type -->
+        <div>
+          <label for="c-cuisine" class="input_label">Cuisine type</label>
+          <select id="c-cuisine" name="cuisineType">
+            <option value="">Select one...</option>
+            <option value="Mexican">Mexican</option>
+            <option value="American">American</option>
+            <option value="Indian">Indian</option>
+            <option value="Asian">Asian</option>
+            <option value="Let's talk! I have ideas.">Let's talk! I have ideas.</option>
+          </select>
+        </div>
+
+        <!-- Date + Time -->
+        <div id="catering-datetime-row" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+          <div>
+            <label for="c-date" class="input_label">Date of Your Event *</label>
+            <input type="text" id="c-date" name="eventDate" placeholder="MM/DD/YYYY" required />
+          </div>
+          <div>
+            <label for="c-time" class="input_label">Time *</label>
+            <input type="text" id="c-time" name="eventTime" placeholder="--:-- AM/PM" required />
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="c-message" class="input_label">Anything else we should know?</label>
+          <textarea
+            id="c-message"
+            name="message"
+            placeholder="Tell us more about your event and what would make this catering order a great experience."
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div>
+          <button type="submit" class="button" style="width: 100%; text-align: center; font-size: 1rem; padding: 1rem;">
+            Submit
+          </button>
+        </div>
+
+        <!-- Messages -->
+        <div id="catering-success" style="display: none; background: #f0fdf4; border: 1px solid #86efac; border-radius: 0.5rem; padding: 1rem; color: #166534; font-size: 0.875rem;">
+          Thank you! We'll be in touch soon.
+        </div>
+        <div id="catering-error" style="display: none; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 0.5rem; padding: 1rem; color: #991b1b; font-size: 0.875rem;">
+          Oops! Please check your details and try again.
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO -->
+  <section style="max-width: 800px; margin: 0 auto; padding: 6rem 1.5rem;">
+    <div style="background: #f9fafb; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+      <p class="eyebrow" style="margin: 0 0 0.75rem;">Let's connect</p>
+      <h2 class="heading_h2" style="margin: 0 0 0.5rem;">Plan your next gathering</h2>
+      <p class="subheading" style="margin: 0 0 1.5rem;">Reach out to start your event journey.</p>
+      <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+        <h4 class="heading_h5" style="margin: 0 0 0.25rem;">Email our team</h4>
+        <p class="paragraph_small text-color_secondary" style="margin: 0 0 0.5rem;">Share your ideas or ask a question.</p>
+        <a href="mailto:events@blockpartysf.com" class="text-link is-secondary">
+          events@blockpartysf.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @media (min-width: 768px) {
+    #catering-intro        { grid-template-columns: 1fr 1fr !important; }
+    #catering-name-row     { grid-template-columns: 1fr 1fr !important; }
+    #catering-datetime-row { grid-template-columns: 1fr 1fr !important; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('catering-inquiry-form') as HTMLFormElement;
+  const successMsg = document.getElementById('catering-success');
+  const errorMsg = document.getElementById('catering-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const data = {
+      formType:    'catering',
+      firstName:   (form.querySelector('#c-first-name') as HTMLInputElement).value,
+      lastName:    (form.querySelector('#c-last-name')  as HTMLInputElement).value,
+      email:       (form.querySelector('#c-email')      as HTMLInputElement).value,
+      company:     (form.querySelector('#c-company')    as HTMLInputElement).value,
+      phone:       (form.querySelector('#c-phone')      as HTMLInputElement).value,
+      guestCount:  (form.querySelector('#c-guest-count') as HTMLSelectElement).value,
+      budget:      (form.querySelector('#c-budget')     as HTMLSelectElement).value,
+      cuisineType: (form.querySelector('#c-cuisine')    as HTMLSelectElement).value,
+      eventDate:   (form.querySelector('#c-date')       as HTMLInputElement).value,
+      eventTime:   (form.querySelector('#c-time')       as HTMLInputElement).value,
+      message:     (form.querySelector('#c-message')    as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch('/api/submit-event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        if (successMsg) successMsg.style.display = 'block';
+      } else {
+        if (errorMsg) errorMsg.style.display = 'block';
+        submitBtn.textContent = 'Submit';
+        submitBtn.disabled = false;
+      }
+    } catch {
+      if (errorMsg) errorMsg.style.display = 'block';
+      submitBtn.textContent = 'Submit';
+      submitBtn.disabled = false;
+    }
+  });
+</script>

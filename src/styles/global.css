@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* ============================================================
+   BLOCK PARTY PRODUCTIONS — GLOBAL STYLES
+   ============================================================ */
+
+/* --- Typography scale --- */
+.heading_h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.heading_h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.heading_h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.heading_h4 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+.heading_h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.heading-responsive_xlarge {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+}
+.subheading {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #4b5563;
+  line-height: 1.7;
+}
+.paragraph_large {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.75;
+}
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.paragraph_small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.paragraph_xlarge {
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  line-height: 1.65;
+  font-style: italic;
+}
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #f3f4f6;
+  color: #4b5563;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+.address {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* --- Text color utilities --- */
+.text-color_secondary { color: #6b7280; }
+
+/* --- Buttons --- */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1.5px solid #000;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.button:hover { background: #1f2937; border-color: #1f2937; }
+
+.button.is-secondary {
+  background: transparent;
+  color: #000;
+}
+.button.is-secondary:hover { background: #000; color: #fff; }
+
+.button.on-inverse {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+.button.on-inverse:hover { background: #f3f4f6; }
+
+.button.on-inverse.is-secondary {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.button.on-inverse.is-secondary:hover { background: #fff; color: #000; }
+
+.button.on-accent-primary {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+.button.on-accent-primary:hover { background: #f3f4f6; }
+
+/* --- Links --- */
+.text-link {
+  text-decoration: underline;
+  color: #000;
+  transition: color 0.15s;
+}
+.text-link:hover { color: #4b5563; }
+.text-link.is-secondary { color: #6b7280; }
+.text-link.is-secondary:hover { color: #000; }
+.text-link.big { font-size: 1rem; font-weight: 500; }
+
+/* --- Form elements --- */
+.input_label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+.input_label.screen-reader {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+  width: 100%;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: #111827;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+}
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.radio_label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.25rem;
+  accent-color: #000;
+}
+
+/* --- Spacing utilities --- */
+.margin-bottom_none    { margin-bottom: 0; }
+.margin-bottom_xxsmall { margin-bottom: 0.25rem; }
+.margin-bottom_xsmall  { margin-bottom: 0.5rem; }
+.margin-bottom_small   { margin-bottom: 1rem; }
+.margin-bottom_medium  { margin-bottom: 2rem; }
+.margin-bottom_large   { margin-bottom: 4rem; }
+
+/* --- Max-width utilities --- */
+.max-width_medium { max-width: 42rem; }
+.max-width_large  { max-width: 64rem; }
+
+/* --- Rich text --- */
+.rich-text p { margin-bottom: 1rem; }
+.rich-text p:last-child { margin-bottom: 0; }
+.rich-text ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+.rich-text ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; }
+
+/* --- Misc --- */
+.display_inline-block { display: inline-block; }

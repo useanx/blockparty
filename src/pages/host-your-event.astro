@@ -1,0 +1,325 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Block Party Productions - Event Inquiries & Support"
+  description="Get in touch with Block Party Productions for details on our unique venues and catering services. We're ready to assist you with planning your next event."
+  ogTitle="Contact Block Party Productions"
+  ogDescription="Have questions or need assistance? Contact Block Party Productions to explore our range of venues and catering options for your next gathering."
+>
+
+  <!-- HERO -->
+  <section style="position: relative; min-height: 50vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #111;">
+    <img
+      src="/images/hero-host.jpg"
+      alt="Host your event with Block Party Productions"
+      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45;"
+    />
+    <div style="position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 800px; margin: 0 auto;">
+      <h1 class="heading-responsive_xlarge" style="color: #fff; margin: 0 0 1.5rem; line-height: 1.05;">
+        Distinctive venues,<br />endless possibilities
+      </h1>
+      <h2 style="color: rgba(255,255,255,0.85); font-size: 1.25rem; font-weight: 400; margin: 0 0 2rem;">
+        Inspired catering, seamless events
+      </h2>
+      <a href="#booking-form" class="button on-inverse is-secondary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- FORM + CONTACT SIDEBAR -->
+  <section style="max-width: 1280px; margin: 0 auto; padding: 6rem 1.5rem;">
+    <div id="form-layout" style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start;">
+
+      <!-- FORM -->
+      <div id="booking-form">
+        <div class="eyebrow" style="margin-bottom: 0.75rem;">Host Your Event With Block Party!</div>
+        <h2 class="heading_h2" style="margin: 0 0 0.75rem;">Start Planning Your Event</h2>
+        <p class="subheading" style="margin: 0 0 2.5rem;">
+          Share your vision — our team will be in touch to help craft your next unforgettable gathering.
+        </p>
+
+        <form id="event-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+          <!-- Name row -->
+          <div id="name-row" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+            <div>
+              <label for="first-name" class="input_label">First Name *</label>
+              <input type="text" id="first-name" name="firstName" placeholder="First name" required />
+            </div>
+            <div>
+              <label for="last-name" class="input_label">Last Name *</label>
+              <input type="text" id="last-name" name="lastName" placeholder="Last name" required />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="input_label">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="email@website.com" required />
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label for="phone" class="input_label">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (415) 000-0000" required />
+          </div>
+
+          <!-- Company -->
+          <div>
+            <label for="company" class="input_label">Company Name *</label>
+            <input type="text" id="company" name="company" placeholder="Required" required />
+          </div>
+
+          <!-- Party size -->
+          <div>
+            <label for="party-size" class="input_label">How big is your party? *</label>
+            <select id="party-size" name="partySize" required>
+              <option value="">Select one...</option>
+              <option value="1 - 10">1 – 10</option>
+              <option value="10 - 30">10 – 30</option>
+              <option value="30+">30+</option>
+            </select>
+          </div>
+
+          <!-- Event type -->
+          <div>
+            <label for="event-type" class="input_label">Event Type</label>
+            <select id="event-type" name="eventType">
+              <option value="">Select one...</option>
+              <option value="Business">Business</option>
+              <option value="Celebration">Celebration</option>
+              <option value="Personal">Personal</option>
+              <option value="Other">Other</option>
+              <option value="I'd like to request catering">I'd like to request catering</option>
+            </select>
+          </div>
+
+          <!-- Style of event -->
+          <div>
+            <label for="event-style" class="input_label">Style of Event</label>
+            <select id="event-style" name="eventStyle">
+              <option value="">Select one...</option>
+              <option value="Stand up reception">Stand up reception</option>
+              <option value="Sit down dining">Sit down dining</option>
+              <option value="Both">Both</option>
+              <option value="I'd like to discuss a new concept">I'd like to discuss a new concept</option>
+            </select>
+          </div>
+
+          <!-- Budget -->
+          <div>
+            <label for="budget" class="input_label">Tell us about your budget (including tax & gratuity) *</label>
+            <select id="budget" name="budget" required>
+              <option value="">Select one...</option>
+              <option value="$1-5K">$1–5K</option>
+              <option value="$5-10K">$5–10K</option>
+              <option value="$10K+">$10K+</option>
+            </select>
+          </div>
+
+          <!-- Date + Time row -->
+          <div id="datetime-row" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+            <div>
+              <label for="event-date" class="input_label">Date of Your Event *</label>
+              <input type="text" id="event-date" name="eventDate" placeholder="MM/DD/YYYY" required />
+            </div>
+            <div>
+              <label for="event-time" class="input_label">Time of Your Event *</label>
+              <input type="text" id="event-time" name="eventTime" placeholder="--:-- AM/PM" required />
+            </div>
+          </div>
+
+          <!-- Duration -->
+          <div>
+            <label for="duration" class="input_label">How long is your event? *</label>
+            <select id="duration" name="duration" required>
+              <option value="">Select one...</option>
+              <option value="1 - 2 hours">1 – 2 hours</option>
+              <option value="2 - 5 hours">2 – 5 hours</option>
+              <option value="5+">5+ hours</option>
+            </select>
+          </div>
+
+          <!-- Venue checkboxes -->
+          <div>
+            <p class="input_label" style="margin-bottom: 0.75rem;">Venue(s) of interest *</p>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label class="radio_label">
+                <input type="checkbox" name="venues" value="LongHouse" />
+                LongHouse
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="venues" value="Fireside / Local Kitchen" />
+                Fireside / Local Kitchen
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="venues" value="Buena Vida Cantina" />
+                Buena Vida Cantina
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="venues" value="Lot F" />
+                Lot F
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="venues" value="Combined Venues" />
+                Combined Venues
+              </label>
+            </div>
+          </div>
+
+          <!-- Add-ons checkboxes -->
+          <div>
+            <p class="input_label" style="margin-bottom: 0.75rem;">Interested in Block Party additions?</p>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label class="radio_label">
+                <input type="checkbox" name="addons" value="Open Bar Options" />
+                Open Bar Options
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="addons" value="Wine or Bourbon Tasting" />
+                Wine or Bourbon Tasting
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="addons" value="Photobooth" />
+                Photobooth
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="addons" value="Special Entertainment: DJ, Live Band, Comedian" />
+                Special Entertainment: DJ, Live Band, Comedian
+              </label>
+              <label class="radio_label">
+                <input type="checkbox" name="addons" value="No thanks" />
+                No thanks!
+              </label>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="message" class="input_label">Anything else you'd like us to know about your next unforgettable moment? *</label>
+            <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button type="submit" class="button" style="width: 100%; justify-content: center; font-size: 1rem; padding: 1rem;">
+              Submit
+            </button>
+          </div>
+
+          <!-- Success / error messages -->
+          <div id="form-success" style="display: none; background: #f0fdf4; border: 1px solid #86efac; border-radius: 0.5rem; padding: 1rem; color: #166534; font-size: 0.875rem;">
+            Thank you! We'll be in touch soon.
+          </div>
+          <div id="form-error" style="display: none; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 0.5rem; padding: 1rem; color: #991b1b; font-size: 0.875rem;">
+            Oops! Please check your details and try again.
+          </div>
+
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+        <div style="background: #f9fafb; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+          <p class="eyebrow" style="margin: 0 0 0.75rem;">Let's connect</p>
+          <h3 class="heading_h3" style="margin: 0 0 0.5rem;">Plan your next gathering</h3>
+          <p class="subheading" style="margin: 0 0 1.5rem;">Reach out to start your event journey.</p>
+          <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <h4 class="heading_h5" style="margin: 0 0 0.25rem;">Email our team</h4>
+            <p class="paragraph_small text-color_secondary" style="margin: 0 0 0.5rem;">Share your ideas or ask a question.</p>
+            <a href="mailto:events@blockpartysf.com" class="text-link is-secondary">
+              events@blockpartysf.com
+            </a>
+          </div>
+        </div>
+
+        <div style="background: #000; border-radius: 1rem; padding: 2rem; color: #fff;">
+          <h3 class="heading_h4" style="color: #fff; margin: 0 0 0.75rem;">Not sure which venue?</h3>
+          <p style="font-size: 0.875rem; color: rgba(255,255,255,0.7); margin: 0 0 1.5rem; line-height: 1.6;">
+            Browse our collection of spaces and find the perfect backdrop for your event.
+          </p>
+          <a href="/venues" class="button on-inverse is-secondary" style="width: 100%; text-align: center; display: block;">
+            View All Venues
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @media (min-width: 768px) {
+    #name-row     { grid-template-columns: 1fr 1fr !important; }
+    #datetime-row { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (min-width: 1024px) {
+    #form-layout  { grid-template-columns: 1.75fr 1fr !important; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('event-form') as HTMLFormElement;
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Collect checkbox values
+    const venues = Array.from(
+      form.querySelectorAll('input[name="venues"]:checked')
+    ).map((el) => (el as HTMLInputElement).value);
+
+    const addons = Array.from(
+      form.querySelectorAll('input[name="addons"]:checked')
+    ).map((el) => (el as HTMLInputElement).value);
+
+    const data = {
+      firstName:  (form.querySelector('#first-name')  as HTMLInputElement).value,
+      lastName:   (form.querySelector('#last-name')   as HTMLInputElement).value,
+      email:      (form.querySelector('#email')       as HTMLInputElement).value,
+      phone:      (form.querySelector('#phone')       as HTMLInputElement).value,
+      company:    (form.querySelector('#company')     as HTMLInputElement).value,
+      partySize:  (form.querySelector('#party-size')  as HTMLSelectElement).value,
+      eventType:  (form.querySelector('#event-type')  as HTMLSelectElement).value,
+      eventStyle: (form.querySelector('#event-style') as HTMLSelectElement).value,
+      budget:     (form.querySelector('#budget')      as HTMLSelectElement).value,
+      eventDate:  (form.querySelector('#event-date')  as HTMLInputElement).value,
+      eventTime:  (form.querySelector('#event-time')  as HTMLInputElement).value,
+      duration:   (form.querySelector('#duration')    as HTMLSelectElement).value,
+      message:    (form.querySelector('#message')     as HTMLTextAreaElement).value,
+      venues,
+      addons,
+    };
+
+    try {
+      const res = await fetch('/api/submit-event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        if (successMsg) successMsg.style.display = 'block';
+      } else {
+        if (errorMsg) errorMsg.style.display = 'block';
+        submitBtn.textContent = 'Submit';
+        submitBtn.disabled = false;
+      }
+    } catch {
+      if (errorMsg) errorMsg.style.display = 'block';
+      submitBtn.textContent = 'Submit';
+      submitBtn.disabled = false;
+    }
+  });
+</script>
