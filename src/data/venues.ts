@@ -1,6 +1,7 @@
 export interface Venue {
   name: string;
   slug: string;
+  imageExt: string;
   address: string;
   tagline: string;
   heroHeading: string;
@@ -19,6 +20,7 @@ export const venues: Venue[] = [
   {
     name: 'LongHouse',
     slug: 'longhouse',
+    imageExt: 'jpg',
     address: '83 Minna St, San Francisco, CA',
     tagline: 'Open, flexible, loft-style venue designed for immersive gatherings, creative offsites, and brand activations.',
     heroHeading: 'Unforgettable Moments Start Here',
@@ -38,6 +40,7 @@ export const venues: Venue[] = [
   {
     name: 'BuenaVida Cantina',
     slug: 'buenavida-cantina',
+    imageExt: 'jpg',
     address: '860 Folsom St, San Francisco, CA',
     tagline: 'Vibrant, Yucatán-inspired cantina featuring bold regional flavors, a lively bar, and an unmistakable sense of festive sophistication.',
     heroHeading: 'Gather. Celebrate. Make it unforgettable.',
@@ -56,6 +59,7 @@ export const venues: Venue[] = [
   {
     name: 'Lot F',
     slug: 'lot-f',
+    imageExt: 'jpg',
     address: '858 Folsom St, San Francisco, CA',
     tagline: 'Modern, industrial-chic venue with a private patio and flexible indoor/outdoor flow.',
     heroHeading: 'Unforgettable Moments Start Here',
@@ -75,6 +79,7 @@ export const venues: Venue[] = [
   {
     name: 'Fireside / Local Kitchen',
     slug: 'venue-local-fireside',
+    imageExt: 'avif',
     address: '330 1st St, San Francisco, CA',
     tagline: 'Warm, flexible dining space centered around wood-fired cuisine and thoughtful gatherings.',
     heroHeading: 'Gather. Celebrate. Make it unforgettable.',

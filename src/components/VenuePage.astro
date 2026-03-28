@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { venue, menuPdf = '/menu.pdf' } = Astro.props;
+const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(venue.address)}`;
 ---
 
 <Layout
@@ -16,9 +17,9 @@ const { venue, menuPdf = '/menu.pdf' } = Astro.props;
 >
 
   <!-- HERO -->
-  <section style="position: relative; min-height: 70vh; display: flex; align-items: flex-end; overflow: hidden; background: #111;">
+  <section style="position: relative; min-height: 70vh; display: flex; align-items: flex-end; overflow: hidden; background: #2C1212;">
     <img
-      src={`/images/venue-${venue.slug}-hero.jpg`}
+      src={`/images/venue-${venue.slug}-hero.${venue.imageExt}`}
       alt={venue.name}
       style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55;"
     />
@@ -37,48 +38,42 @@ const { venue, menuPdf = '/menu.pdf' } = Astro.props;
   <!-- DESCRIPTION -->
   <section style="max-width: 1280px; margin: 0 auto; padding: 6rem 1.5rem;">
     <div id="desc-grid" style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start;">
+
       <div>
         <h2 class="heading_h2" style="margin: 0 0 2rem;">{venue.descriptionHeading}</h2>
         {venue.descriptionBody.map(para => (
           <p class="paragraph_large text-color_secondary" style="margin: 0 0 1.5rem;">{para}</p>
         ))}
       </div>
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <div style="background: #f9fafb; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
-          <p class="eyebrow" style="margin: 0 0 0.75rem;">Discover our venues</p>
-          <h3 class="heading_h2" style="margin: 0 0 0.5rem;">{venue.name}</h3>
-          
-            href={`https://maps.google.com/?q=${encodeURIComponent(venue.address)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-link big"
-            style="display: inline-block; margin-bottom: 1.5rem;"
-          >
-            {venue.address}
+
+      <div style="background: #F0ECE6; border-radius: 1rem; padding: 2rem; border: 1px solid #E8E1D9;">
+        <p class="eyebrow" style="margin: 0 0 0.75rem;">Discover our venues</p>
+        <h3 class="heading_h2" style="margin: 0 0 0.5rem;">{venue.name}</h3>
+        
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer" style="font-size: 1rem; font-weight: 500; color: #2C1212; text-decoration: underline; display: inline-block; margin-bottom: 1.5rem;">{venue.address}</a>
+        <div style="border-top: 1px solid #E8E1D9; padding-top: 1.5rem;">
+          <a href="/host-your-event" class="button" style="width: 100%; text-align: center; display: block;">
+            Book This Space
           </a>
-          <div style="border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-            <a href="/host-your-event" class="button" style="width: 100%; text-align: center; display: block;">
-              Book This Space
-            </a>
-          </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- DETAIL / SECOND IMAGE -->
-  <section style="background: #f9fafb; padding: 6rem 1.5rem;">
+  <!-- DETAIL SECTION -->
+  <section style="background: #F0ECE6; padding: 6rem 1.5rem;">
     <div style="max-width: 1280px; margin: 0 auto;">
       <h2 class="heading_h2" style="margin: 0 0 1.5rem; text-align: center;">Your Event, Our Canvas</h2>
       <div id="detail-grid" style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; margin-top: 3rem;">
         <img
-          src={`/images/venue-${venue.slug}-detail.jpg`}
+          src={`/images/venue-${venue.slug}-detail.${venue.imageExt}`}
           alt={`${venue.name} event space`}
-          style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 1rem; background: #e5e7eb;"
+          style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 1rem; background: #E8E1D9;"
         />
         <div>
           <h3 class="heading_h3" style="margin: 0 0 1.5rem;">{venue.detailHeading}</h3>
-          <p class="paragraph_large" style="margin: 0 0 2rem; color: #4b5563;">{venue.detailBody}</p>
+          <p class="paragraph_large" style="margin: 0 0 2rem; color: rgba(44, 18, 18, 0.7);">{venue.detailBody}</p>
           <a href="/host-your-event" class="button">Get Started</a>
         </div>
       </div>
@@ -91,44 +86,44 @@ const { venue, menuPdf = '/menu.pdf' } = Astro.props;
       <div>
         <p class="eyebrow" style="margin: 0 0 0.75rem;">Why Choose Block Party?</p>
         <h2 class="heading_h2" style="margin: 0 0 1rem;">Designed for Connection. Crafted for You.</h2>
-        <p class="paragraph_large" style="margin: 0 0 2rem; color: #4b5563;">
+        <p class="paragraph_large" style="margin: 0 0 2rem; color: rgba(44, 18, 18, 0.7);">
           We blend atmosphere, cuisine, and service to create events that feel effortless and unforgettable. Our team handles every detail, so you can focus on what matters — bringing people together.
         </p>
         <a href="/host-your-event" class="button">Get Started</a>
       </div>
       <img
-        src={`/images/venue-${venue.slug}-why.jpg`}
+        src={`/images/venue-${venue.slug}-why.${venue.imageExt}`}
         alt="Why choose Block Party"
-        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 1rem; background: #f3f4f6;"
+        style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 1rem; background: #F0ECE6;"
       />
     </div>
   </section>
 
   <!-- THREE FEATURES -->
-  <section style="background: #f9fafb; padding: 6rem 1.5rem;">
+  <section style="background: #F0ECE6; padding: 6rem 1.5rem;">
     <div style="max-width: 1280px; margin: 0 auto;">
       <p class="eyebrow" style="text-align: center; margin: 0 0 0.75rem;">Distinctive Venues. Inspired Gatherings.</p>
       <h2 class="heading_h2" style="text-align: center; margin: 0 0 3rem;">Host Boldly. Celebrate Creatively.</h2>
       <div id="features-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
 
-        <div style="background: #fff; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+        <div style="background: #FDF9F6; border-radius: 1rem; padding: 2rem; border: 1px solid #E8E1D9;">
           <h3 class="heading_h4" style="margin: 0 0 0.75rem;">Versatile event venues</h3>
-          <p class="paragraph" style="margin: 0; color: #4b5563;">
-            Choose from unique spaces — loft-style, indoor-outdoor patios, or exposed brick backdrops — each tailored for gatherings of any size, from intimate dinners to large-scale activations.
+          <p class="paragraph" style="margin: 0; color: rgba(44, 18, 18, 0.7);">
+            Choose from unique spaces — loft-style, indoor-outdoor patios, or exposed brick backdrops — each tailored for gatherings of any size.
           </p>
         </div>
 
-        <div style="background: #fff; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+        <div style="background: #FDF9F6; border-radius: 1rem; padding: 2rem; border: 1px solid #E8E1D9;">
           <h3 class="heading_h4" style="margin: 0 0 0.75rem;">Chef-crafted catering</h3>
-          <p class="paragraph" style="margin: 0; color: #4b5563;">
-            Enjoy globally inspired menus, seasonal ingredients, and creative setups like taco bars or handcrafted specialties, with options for delivery or full-service experiences.
+          <p class="paragraph" style="margin: 0; color: rgba(44, 18, 18, 0.7);">
+            Globally inspired menus, seasonal ingredients, and creative setups — with options for delivery or full-service experiences.
           </p>
         </div>
 
-        <div style="background: #fff; border-radius: 1rem; padding: 2rem; border: 1px solid #e5e7eb;">
+        <div style="background: #FDF9F6; border-radius: 1rem; padding: 2rem; border: 1px solid #E8E1D9;">
           <h3 class="heading_h4" style="margin: 0 0 0.75rem;">Effortless planning</h3>
-          <p class="paragraph" style="margin: 0; color: #4b5563;">
-            Our team handles every detail, from layout to logistics, ensuring a seamless process and a welcoming atmosphere for you and your guests.
+          <p class="paragraph" style="margin: 0; color: rgba(44, 18, 18, 0.7);">
+            Our team handles every detail, from layout to logistics, ensuring a seamless process and a welcoming atmosphere.
           </p>
         </div>
 

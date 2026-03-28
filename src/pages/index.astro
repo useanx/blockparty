@@ -9,17 +9,12 @@ import { venues } from '../data/venues';
 >
 
   <!-- HERO -->
-  <section style="position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #111;">
-    <img
-      src="/images/hero-home.jpg"
-      alt="Block Party Productions event"
-      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;"
-    />
-    <div style="position: relative; z-index: 1; text-align: center; padding: 2rem 1.5rem; max-width: 900px; margin: 0 auto;">
-     <h1 class="heading_h1 hero-text" style="color: #fff; margin: 0 0 1.5rem;"></h1>
+  <section style="min-height: 90vh; display: flex; align-items: center; justify-content: center; background: #2C1212;">
+    <div style="text-align: center; padding: 2rem 1.5rem; max-width: 900px; margin: 0 auto;">
+      <h1 class="heading_h1 hero-text" style="color: #fff; margin: 0 0 1.5rem;">
         Gather. Celebrate. Savor Every Moment.
       </h1>
-      <p class="subheading hero-text-delay" style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2.5rem;"></p>
+      <p class="subheading hero-text-delay" style="color: rgba(253,249,246,0.75); max-width: 600px; margin: 0 auto 2.5rem;">
         Distinctive venues. Inspired cuisine. Effortless events, crafted for San Francisco's boldest gatherings. Discover your next unforgettable experience with Block Party Productions.
       </p>
       <div class="hero-text-delay-2" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
@@ -50,18 +45,18 @@ import { venues } from '../data/venues';
   </section>
 
   <!-- THREE VALUE PROPS -->
-  <section style="background: #f9fafb; padding: 6rem 1.5rem;">
+  <section style="background: #F0ECE6; padding: 6rem 1.5rem;">
     <div style="max-width: 1280px; margin: 0 auto;">
       <div id="value-grid" style="display: grid; grid-template-columns: 1fr; gap: 3rem;">
 
         <div class="reveal reveal-delay-1" style="display: flex; flex-direction: column; gap: 1rem;">
           <img
-            src="/images/venue-spaces.jpg"
+            src="/images/venue-spaces.avif"
             alt="Event venues with character"
             style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 0.75rem; background: #e5e7eb;"
           />
           <h3 class="heading_h4" style="margin: 0;">Spaces with character, ready for you</h3>
-          <p class="paragraph_large" style="margin: 0; color: #4b5563;">
+          <p class="paragraph_large" style="margin: 0; color: rgba(44, 18, 18, 0.7);">
             From cozy dinners to vibrant parties, our venues offer distinctive backdrops and thoughtful amenities. Each space is designed to inspire connection and bring your gathering to life, no matter the size or style.
           </p>
           <a href="/venues" class="button is-secondary" style="align-self: flex-start;">See spaces</a>
@@ -69,12 +64,12 @@ import { venues } from '../data/venues';
 
         <div class="reveal reveal-delay-2" style="display: flex; flex-direction: column; gap: 1rem;">
           <img
-            src="/images/catering-menus.jpg"
+            src="/images/catering-menus.avif"
             alt="Chef-crafted menus"
             style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 0.75rem; background: #e5e7eb;"
           />
           <h3 class="heading_h4" style="margin: 0;">Menus that spark conversation</h3>
-          <p class="paragraph_large" style="margin: 0; color: #4b5563;">
+          <p class="paragraph_large" style="margin: 0; color: rgba(44, 18, 18, 0.7);">
             Savor dishes inspired by global flavors and crafted with local, seasonal ingredients. Choose from interactive stations or elegant plated meals — our team brings creativity and care to every bite.
           </p>
           <a href="/catering" class="button is-secondary" style="align-self: flex-start;">View menus</a>
@@ -82,12 +77,12 @@ import { venues } from '../data/venues';
 
         <div class="reveal reveal-delay-3" style="display: flex; flex-direction: column; gap: 1rem;">
           <img
-            src="/images/event-planning.jpg"
+            src="/images/event-planning.avif"
             alt="Effortless event planning"
             style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 0.75rem; background: #e5e7eb;"
           />
           <h3 class="heading_h4" style="margin: 0;">Planning made easy for you</h3>
-          <p class="paragraph_large" style="margin: 0; color: #4b5563;">
+          <p class="paragraph_large" style="margin: 0; color: rgba(44, 18, 18, 0.7);">
             Let our team handle the details: set-up, service, and everything in between — so you can relax and enjoy every moment.
           </p>
           <a href="/host-your-event" class="button is-secondary" style="align-self: flex-start;">Get started</a>
@@ -113,11 +108,11 @@ import { venues } from '../data/venues';
       <h2 class="heading_h2" style="margin: 0;">Gatherings made unforgettable</h2>
     </div>
     <div id="venues-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
-      {venues.map(venue => (
-        <div style="border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
+      {venues.map((venue, i) => (
+        <div class={`reveal reveal-delay-${i + 1}`} style="border: 1px solid #E8E1D9; border-radius: 1rem; overflow: hidden; display: flex; flex-direction: column;">
           <div style="aspect-ratio: 16/9; background: #f3f4f6; overflow: hidden;">
             <img
-              src={`/images/venue-${venue.slug}.jpg`}
+              src={`/images/venue-${venue.slug}.${venue.imageExt}`}
               alt={venue.name}
               style="width: 100%; height: 100%; object-fit: cover;"
             />
@@ -126,7 +121,7 @@ import { venues } from '../data/venues';
             <p class="paragraph_small text-color_secondary" style="margin: 0;">Venue</p>
             <h3 class="heading_h4" style="margin: 0;">{venue.name}</h3>
             <p class="address" style="margin: 0;">{venue.address}</p>
-            <p class="paragraph" style="margin: 0; color: #4b5563; flex: 1;">{venue.tagline}</p>
+            <p class="paragraph" style="margin: 0; color: rgba(44, 18, 18, 0.7); flex: 1;">{venue.tagline}</p>
             <a href={`/${venue.slug}`} class="button is-secondary" style="align-self: flex-start; margin-top: 0.5rem;">View Venue</a>
           </div>
         </div>
@@ -135,135 +130,126 @@ import { venues } from '../data/venues';
   </section>
 
   <!-- PARTNER LOGOS -->
-  <section style="background: #f9fafb; padding: 4rem 1.5rem;">
+  <section style="background: #F0ECE6; padding: 4rem 1.5rem;">
     <div style="max-width: 1280px; margin: 0 auto; text-align: center;">
       <h3 class="heading_h3" style="margin: 0 0 0.75rem;">Trusted by Industry Leaders</h3>
       <p class="subheading" style="max-width: 600px; margin: 0 auto 3rem;">
         We're proud to partner with innovative companies and community leaders who share our passion for unforgettable gatherings.
       </p>
-      <p class="paragraph_small text-color_secondary" style="margin: 0;">
-        Add your partner logo images to <code>/public/images/</code> and update the src attributes below.
-      </p>
       <div id="logos-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: center; margin-top: 2rem;">
-        <img src="/images/partner-1.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-2.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-3.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-4.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-5.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-6.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-7.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-8.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
-        <img src="/images/partner-9.png" alt="Partner" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-1.avif" alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-2.png"  alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-3.avif" alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-4.png"  alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-5.png"  alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-6.png"  alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-7.png"  alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-8.png"  alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
+        <img src="/images/partner-9.png"  alt="Partner" onerror="this.style.display='none'" style="height: 2rem; width: auto; opacity: 0.6; object-fit: contain;" />
       </div>
     </div>
   </section>
 
-  <!-- BLOG/EDITORIAL TEASERS -->
+  <!-- EDITORIAL TEASERS -->
   <section style="max-width: 1280px; margin: 0 auto; padding: 6rem 1.5rem;">
-    <h2 class="heading_h2" style="margin: 0 0 3rem;">Fresh ideas for every gathering</h2>
+    <h2 class="heading_h2 reveal" style="margin: 0 0 3rem;">Fresh ideas for every gathering</h2>
     <div id="editorial-grid" style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
 
-      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden;">
+      <div class="reveal" style="border: 1px solid #E8E1D9; border-radius: 1rem; overflow: hidden;">
         <img src="/images/editorial-1.jpg" alt="Host unforgettable events" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #f3f4f6;" />
         <div style="padding: 1.5rem;">
           <span class="tag" style="margin-bottom: 0.75rem; display: inline-block;">Event planning</span>
           <h3 class="heading_h2" style="margin: 0 0 0.75rem;">Host unforgettable events with ease</h3>
-          <p class="subheading" style="margin: 0;">
-            Get practical advice for seamless planning, from choosing the right space to creating a menu that brings people together.
-          </p>
+          <p class="subheading" style="margin: 0;">Get practical advice for seamless planning, from choosing the right space to creating a menu that brings people together.</p>
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden;">
-        <img src="/images/editorial-2.jpg" alt="SoMa venues" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #f3f4f6;" />
+      <div class="reveal" style="border: 1px solid #E8E1D9; border-radius: 1rem; overflow: hidden;">
+        <img src="/images/editorial-2.avif" alt="SoMa venues" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #f3f4f6;" />
         <div style="padding: 1.5rem;">
-          <span class="tag margin-bottom_xsmall" style="display: inline-block;">Venue spotlight</span>
-          <h3 class="heading_h4" style="margin: 0.75rem 0;">Discover SoMa's standout event spaces</h3>
-          <p class="paragraph" style="margin: 0; color: #4b5563;">
-            Step inside flexible venues with unique character and prime locations — perfect for team offsites, milestone parties, and everything in between.
-          </p>
+          <span class="tag" style="margin-bottom: 0.75rem; display: inline-block;">Venue spotlight</span>
+          <h3 class="heading_h4" style="margin: 0 0 0.75rem;">Discover SoMa's standout event spaces</h3>
+          <p class="paragraph" style="margin: 0; color: rgba(44, 18, 18, 0.7);">Step inside flexible venues with unique character and prime locations — perfect for team offsites, milestone parties, and everything in between.</p>
         </div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; border: 1px solid #e5e7eb; border-radius: 1rem; overflow: hidden;">
-        <img src="/images/editorial-3.jpg" alt="Bay Area catering" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #f3f4f6;" />
+      <div class="reveal" style="border: 1px solid #E8E1D9; border-radius: 1rem; overflow: hidden;">
+        <img src="/images/catering-dish.jpg" alt="Bay Area catering" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #f3f4f6;" />
         <div style="padding: 1.5rem;">
-          <span class="tag margin-bottom_xsmall" style="display: inline-block;">Catering</span>
-          <h3 class="heading_h4" style="margin: 0.75rem 0;">Menus inspired by the Bay Area</h3>
-          <p class="paragraph" style="margin: 0; color: #4b5563;">
-            Enjoy chef-crafted dishes, creative setups, and fresh local flavors. Our catering brings warmth, style, and ease to every event.
-          </p>
+          <span class="tag" style="margin-bottom: 0.75rem; display: inline-block;">Catering</span>
+          <h3 class="heading_h4" style="margin: 0 0 0.75rem;">Menus inspired by the Bay Area</h3>
+          <p class="paragraph" style="margin: 0; color: rgba(44, 18, 18, 0.7);">Enjoy chef-crafted dishes, creative setups, and fresh local flavors. Our catering brings warmth, style, and ease to every event.</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- PHOTO GALLERY STRIP -->
+  <!-- GALLERY -->
   <section style="padding: 0 1.5rem 6rem;">
     <div style="max-width: 1280px; margin: 0 auto;">
-      <h2 class="heading_h2" style="margin: 0 0 2rem; text-align: center;">Gatherings that inspire, moments that last</h2>
+      <h2 class="heading_h2 reveal" style="margin: 0 0 2rem; text-align: center;">Gatherings that inspire, moments that last</h2>
       <p class="subheading" style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
         Step inside our venues and events — discover the vibrant energy, unique details, and unforgettable experiences that bring every celebration to life.
       </p>
       <div id="gallery-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
-        <img src="/images/gallery-1.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
-        <img src="/images/gallery-2.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
-        <img src="/images/gallery-3.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
-        <img src="/images/gallery-4.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
-        <img src="/images/gallery-5.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
-        <img src="/images/gallery-6.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
-        <img src="/images/gallery-7.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
-        <img src="/images/gallery-8.jpg" alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/hero-home.avif"        alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/gallery-2.jpg"         alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/gallery-3.avif"        alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/gallery-4.avif"        alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/gallery-5.jpg"         alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/gallery-6.avif"        alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/gallery-7.jpg"         alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
+        <img src="/images/gallery-8.avif"        alt="Event moment" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 0.5rem; background: #f3f4f6;" />
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section style="background: #f9fafb; padding: 6rem 1.5rem;">
+  <section style="background: #F0ECE6; padding: 6rem 1.5rem;">
     <div style="max-width: 800px; margin: 0 auto;">
       <h2 class="heading_h2" style="margin: 0 0 0.75rem;">Event FAQs, answered simply</h2>
       <p class="subheading" style="margin: 0 0 3rem;">
-        Get quick answers about our venues, catering, and planning process. We're here to help you create a seamless, memorable event — every step of the way.
+        Get quick answers about our venues, catering, and planning process.
       </p>
       <div style="display: flex; flex-direction: column; gap: 0;">
 
-        <details style="border-top: 1px solid #e5e7eb; padding: 1.25rem 0;">
+        <details style="border-top: 1px solid #E8E1D9; padding: 1.25rem 0;">
           <summary style="font-size: 1.05rem; font-weight: 500; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             What kinds of events do you host?
             <span style="font-size: 1.5rem; font-weight: 300; line-height: 1;">+</span>
           </summary>
-          <p class="paragraph" style="margin: 1rem 0 0; color: #4b5563;">
+          <p class="paragraph" style="margin: 1rem 0 0; color: rgba(44, 18, 18, 0.7);">
             Our spaces are perfect for everything from team offsites and product launches to milestone birthdays and casual get-togethers. We'll help you find the right fit for your vision.
           </p>
         </details>
 
-        <details style="border-top: 1px solid #e5e7eb; padding: 1.25rem 0;">
+        <details style="border-top: 1px solid #E8E1D9; padding: 1.25rem 0;">
           <summary style="font-size: 1.05rem; font-weight: 500; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             How does catering work here?
             <span style="font-size: 1.5rem; font-weight: 300; line-height: 1;">+</span>
           </summary>
-          <p class="paragraph" style="margin: 1rem 0 0; color: #4b5563;">
+          <p class="paragraph" style="margin: 1rem 0 0; color: rgba(44, 18, 18, 0.7);">
             Choose from chef-crafted menus, seasonal specialties, and flexible service — drop-off or full-service. We'll help you customize every detail, from taco bars to plated dinners.
           </p>
         </details>
 
-        <details style="border-top: 1px solid #e5e7eb; padding: 1.25rem 0;">
+        <details style="border-top: 1px solid #E8E1D9; padding: 1.25rem 0;">
           <summary style="font-size: 1.05rem; font-weight: 500; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             Can I see the venues first?
             <span style="font-size: 1.5rem; font-weight: 300; line-height: 1;">+</span>
           </summary>
-          <p class="paragraph" style="margin: 1rem 0 0; color: #4b5563;">
+          <p class="paragraph" style="margin: 1rem 0 0; color: rgba(44, 18, 18, 0.7);">
             Absolutely! Book a tour — virtual or in-person — to explore our spaces, get a feel for the vibe, and ask any questions. We'll work around your schedule.
           </p>
         </details>
 
-        <details style="border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 1.25rem 0;">
+        <details style="border-top: 1px solid #E8E1D9; border-bottom: 1px solid #E8E1D9; padding: 1.25rem 0;">
           <summary style="font-size: 1.05rem; font-weight: 500; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             Are your venues accessible and easy to reach?
             <span style="font-size: 1.5rem; font-weight: 300; line-height: 1;">+</span>
           </summary>
-          <p class="paragraph" style="margin: 1rem 0 0; color: #4b5563;">
+          <p class="paragraph" style="margin: 1rem 0 0; color: rgba(44, 18, 18, 0.7);">
             Yes, all our locations are accessible and close to BART, MUNI, and major SF landmarks. We're happy to share parking and accessibility info for each space.
           </p>
         </details>
@@ -273,7 +259,7 @@ import { venues } from '../data/venues';
   </section>
 
   <!-- FINAL CTA -->
-  <section style="background: #000; padding: 6rem 1.5rem; text-align: center;">
+  <section style="background: #2C1212; padding: 6rem 1.5rem; text-align: center;">
     <div style="max-width: 600px; margin: 0 auto;">
       <h2 class="heading_h2 reveal" style="color: #fff; margin: 0 0 1rem;">Plan your next unforgettable gathering</h2>
       <p class="subheading" style="color: rgba(255,255,255,0.7); margin: 0 0 2.5rem;">
@@ -287,17 +273,16 @@ import { venues } from '../data/venues';
 
 <style>
   @media (min-width: 768px) {
-    #intro-grid       { grid-template-columns: 1fr 1fr !important; }
-    #value-grid       { grid-template-columns: repeat(3, 1fr) !important; }
-    #venues-grid      { grid-template-columns: repeat(2, 1fr) !important; }
-    #editorial-grid   { grid-template-columns: 1.5fr 1fr !important; }
-    #gallery-grid     { grid-template-columns: repeat(4, 1fr) !important; }
+    #intro-grid     { grid-template-columns: 1fr 1fr !important; }
+    #value-grid     { grid-template-columns: repeat(3, 1fr) !important; }
+    #venues-grid    { grid-template-columns: repeat(2, 1fr) !important; }
+    #editorial-grid { grid-template-columns: 1.5fr 1fr !important; }
+    #gallery-grid   { grid-template-columns: repeat(4, 1fr) !important; }
   }
   @media (min-width: 1024px) {
-    #venues-grid      { grid-template-columns: repeat(4, 1fr) !important; }
-    #editorial-grid   { grid-template-columns: 2fr 1fr 1fr !important; }
+    #venues-grid    { grid-template-columns: repeat(4, 1fr) !important; }
+    #editorial-grid { grid-template-columns: 2fr 1fr 1fr !important; }
   }
-
   details summary::-webkit-details-marker { display: none; }
   details[open] summary span { transform: rotate(45deg); display: inline-block; }
 </style>
